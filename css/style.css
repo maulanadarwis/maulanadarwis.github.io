@@ -1,0 +1,521 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+html{
+    scrollbar-width: none;
+}
+
+body{
+    font-family: 'lunchtype24', 'sans-serif';
+    src: url('fonts/lunchtype24-medium-expanded.ttf');
+    background-color: #f4f2e6;
+    overflow-x: hidden; 
+}
+
+/* @-moz-document url-prefix() { /* Disable scrollbar Firefox */
+    /* html{
+      scrollbar-width: none; */
+    /* } */
+
+::-webkit-scrollbar {
+    background: transparent; /* Disable scrollbar Chrome/Safari/Webkit */
+    width: 0px;
+    }
+
+
+
+#progresscrollbar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 5px;
+    height: 100%;
+    background: #302d2d;
+    z-index: 100000;
+}
+
+/* bagian cursor */
+.cursor--outer {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #c4c5b9;
+    /* border: 1px solid #c4c5b9; */
+    mix-blend-mode: difference;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    position: fixed;
+    left: -1%;
+    top: -2%;
+    pointer-events: none;
+    transform: translate(-100%, -100%);
+    z-index: 1000;
+  }
+
+  .cursor--inner {
+    pointer-events: none;
+    width: 4px;
+    height: 4px;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 11000;
+    background:#e56d26;
+    background-size: cover;
+    z-index: 0;
+  }
+  
+
+
+
+/* mulai ini bagian navbar */
+nav{
+    display: flex;
+    position: sticky;
+    top: 0;
+    background-color: #f4f2e6;
+    justify-content: space-between;
+    /* padding: 20px 0; */
+    height: 60px;
+    align-items: center;
+    border-bottom: 1px solid rgba(50, 43, 41, 0.3);
+    z-index: 999;   
+}
+
+nav .logo{
+    position: relative;
+    left: 4.5%;
+    transition: 0.7s ease-out;
+}
+
+nav .logo:hover{
+    filter: blur(1px);
+}
+
+nav ul{
+    display: flex;
+    position: relative;
+    right: 5%;
+    list-style: none;
+    width: 20%;
+    justify-content: space-between;
+    color: #302d2d;
+    
+}
+
+nav ul li a{
+    color: #302d2d;
+    text-decoration: none;
+    font-size: 0.9em;
+    transition: 0.7s ease-out;
+}
+
+nav ul li a:hover {
+    color: #e56d26;
+    filter: blur(1px);
+}
+
+/* sesi hamburger menu  */
+
+.menu-toggle{
+    display: none;
+    flex-direction: column;
+    height: 14px;
+    justify-content: space-between;
+    position: relative;
+    right: 5%;
+}
+
+.menu-toggle span{
+    display: block;
+    width: 28px;
+    height: 2px;
+    background-color: #302d2d;
+    transition: ease-out 0.3s;
+}
+
+.menu-toggle input{
+    position: absolute;
+    width: 30px;
+    height: 18px;
+    top: -2px;
+    left: -1px;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+/* animasinya hamburger */
+.menu-toggle span:nth-child(2){
+    transform-origin: 0 0;
+
+}
+
+.menu-toggle span:nth-child(4){
+    transform-origin: 0 100%;
+
+}
+
+.menu-toggle input:checked ~ span:nth-child(2){
+    background-color: #e56d26;
+    transform: rotate(45deg) translate(-1px, -3px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(4){
+    background-color: #e56d26;
+    transform: rotate(-45deg) translate(-2px, 4px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(3){
+    transform: translateX(100px);
+    filter: opacity(0);
+}
+
+footer{
+    position: fixed;
+    display: flex;
+    bottom: 0;
+    height: 60px;
+    align-items: center;
+    border-top: 1px solid rgba(50, 43, 41, 0.3);
+    z-index: 999;  
+    width: 100%; 
+    background-color: #f4f2e6;
+}
+
+footer p{
+    position: relative;
+    left: 4vw;
+    color: #302d2d;
+}
+
+.pembuka-hp{
+    display: none;
+}
+
+footer img{
+    position: absolute;
+    top: 5%;
+    scale: 60%;
+}
+
+.kecil2{
+    right: 4%;
+}
+.kecil1{
+    right: 7%;
+}
+
+/* responsive breakpoint */
+/* ukuran tablet nih */
+@media screen and (max-width: 768px){
+    nav ul{
+        width: 50%;
+    }
+}
+/* ukuran mobile nih */
+@media screen and (max-width: 576px){
+    .menu-toggle{
+        display: flex;
+    }
+    nav ul{
+        position: absolute;
+        right: 0;
+        top: 59px;
+        height: 100vh;
+        flex-direction: column;
+        background-color: #f4f2e6;
+        align-items: center;
+        justify-content: space-evenly;
+        border-top: 1px solid rgba(50, 43, 41, 0.3);
+        border-left: 1px solid rgba(50, 43, 41, 0.3);
+        z-index: -1;
+        transform: translateX(100%);
+        transition: ease-out 0.7s;
+    }
+    nav ul li{
+        margin-top: -80px;
+    }
+    nav ul.slide{
+        transform: translateX(0%);
+    }
+}
+
+/* sekarang masuk ke sesi badan sebenarnya */
+section{
+    height: 900px;
+    width: calc(1em + 90vw);
+    margin: auto;
+    justify-items: center;
+    justify-content: space-evenly;
+    color: #302d2d;
+}
+
+.sun{
+    position: absolute;
+    top: 15vh;
+    /* left: 0px; */
+    margin-right: 500px auto;
+    height: 11%;
+    width: auto;
+    background-color: rgba(50, 43, 41, 0);
+    filter: blur(3px);
+    z-index: -1;
+}
+
+
+/* bagian text */
+.pembuka{
+    font-size: calc(1em + 1vw);
+}
+
+.buka1, .buka2, .buka3,
+.buka4, .buka5{
+    position: relative;
+    cursor: context-menu;
+}
+
+.buka1 .text-wrapper, .buka2 .text-wrapper,
+.buka3 .text-wrapper, .buka4 .text-wrapper,
+.buka5 .text-wrapper{
+    position: absolute;  
+    /* yg position aslinya absolute */
+    /* padding-top: 0.2em; */
+    padding-right: 0.05em;
+    /* padding-bottom: 0.1em; */
+    overflow: hidden;
+}
+
+.buka1 .letter, .buka2 .letter,
+.buka3 .letter, .buka4 .letter,
+.buka5 .letter{
+    transform-origin: 0 100%;
+    display: inline-block;
+    line-height: 1em;
+}
+
+.buka1{
+    top: 20vh;
+}
+.buka2{
+    top: 27vh;
+}
+.buka3{
+    top: 34vh;
+}
+.buka4{
+    top: 41vh;
+}
+.buka5{
+    top: 48vh;
+}
+
+.bintangbesar{
+    position: absolute;
+    height: 60vh;
+    right: -10%;
+    top: 20%;
+    filter: blur(20px);
+    z-index: -2;
+}
+
+.panah{
+    position: absolute;
+    height: 20%;
+    top: 68%;
+}
+
+.pembuka-project{
+    font-size: calc(1em + 1vw);
+    position: absolute;
+    top: 95%;
+}
+
+.colors{
+    position: absolute;
+    height: 200px;
+    right: 5%;
+    top: 110%;
+    filter: blur(6px);
+}
+
+.navigation-wrapper{
+    position: absolute;
+    top: 110%;
+    left: 5%;
+}
+
+.navigation-item {
+    display: block;
+    user-select: none;
+    margin: -5px;
+    z-index: 10;
+  }
+
+.navigation-item a {
+    font-family: 'lunchtype24';
+    src: url('fonts/lunchtype24-medium-expanded.ttf');
+    font-size: calc(1.5em + 2vw);
+    text-decoration: none;
+    color: rgba(37, 35, 35, 0.295);
+  }
+  
+span {
+    position: relative;
+    display: block;
+}
+
+.navigation-item span:before {
+    width: 0;
+    color: #332c2a;
+    white-space: nowrap;
+    overflow: hidden;
+    position: absolute;
+    content: attr(data-text);
+    transition: all 1s cubic-bezier(0.84, 0, 0.08, 0.99);
+}
+
+.navigation-item span:hover:before {
+    width: 100%;
+}
+
+.project-preview-wrapper {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+}
+
+.project-preview {
+    position: absolute;
+    top: 2%;
+    left: 80%;
+    width: 0px;
+    height: 400px;
+    background: url(img/image-1.jpg) no-repeat 50% 50%;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.resume, .portfolio{
+    font-size: calc(1em + 2vw);
+    position: absolute; 
+}  
+
+.portfolio  {
+    padding-bottom: 10%;
+}
+
+.resume a, .portfolio a{
+    text-decoration: none;
+    color: #302d2d;
+    transition: 0.7s ease-out;
+}
+
+.resume a:hover, .portfolio a:hover{
+    filter: blur(3px);
+}
+
+.resume{
+    top: 185%;
+}
+.portfolio{
+    position: absolute;
+    top: 193%;
+}
+
+
+/* efek section tablet */
+@media screen and (max-width:768px){
+
+    /* .sun{
+        position: absolute;
+        top: -20px; 
+        height: 2%;
+        width: auto;
+    } */
+    
+    .kecil1{
+        right: 9%;
+    }
+    .cursor--outer,
+    .cursor--inner{
+        display: none;
+    }
+    .pembuka{
+        font-size: calc(0.8em + 1vw);
+
+    }
+    .footer p{
+        left: 4vw;
+    }
+    .bintangbesar{
+        width: 50%;
+        top: 40%;
+    }
+    .portfolio{
+        position: absolute;
+        top: 170%;
+    }
+    .resume{
+        top: 175%;
+    }
+}
+
+
+@media screen and (max-width: 576px){
+    .pembuka h2{
+        display: none;
+    }
+    .section{
+        height: 10px;
+    }
+    .pembuka-hp{
+        display: block;
+        position: absolute;
+        margin-right: 1vh;
+        top: 26%;
+        font-size: calc(1.1em + 1vw);
+    }
+    .panah{
+        top: 75%;
+        height: 15vh;
+    }
+    section img.sun{
+        height: 9vh;
+    }
+    .navigation-wrapper{
+        top: 105%;
+        font-size: calc(0.65em + 1vw);
+    }
+    .resume{
+        top: 150%;
+    }
+    .portfolio{
+        top: 155%;
+    }
+    .pembuka-project{
+        top: 90%;
+        font-size: calc(1em + 1vw);
+    }
+    .kecil1{
+        right: 10%;
+    }
+    
+}
+
+/* .scene,
+canvas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+} */
+/* e56d2b oren, 2e307c biru */
