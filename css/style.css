@@ -21,7 +21,7 @@ html{
 }
 
 body{
-    font-family: 'lunchtype24expanded_medium';
+    font-family: 'lunchtype24expanded_medium', 'sans-serif';
     background-color: #f4f2e6;
     overflow-x: hidden; 
 }
