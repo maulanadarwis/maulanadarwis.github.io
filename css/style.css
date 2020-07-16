@@ -8,9 +8,20 @@ html{
     scrollbar-width: none;
 }
 
+@font-face{
+    font-family: 'lunchtype24', 'sans-serif';
+    src: url('./font/lunchtype24-medium-expanded.eot');
+    src: url('./font/lunchtype24-medium-expanded.eot?') format('embedded-opentype'),
+         url('./font/lunchtype24-medium-expanded.woff2') format('woff2'),
+         url('./font/lunchtype24-medium-expanded.woff') format('woff'),
+         url('./font/lunchtype24-medium-expanded.ttf') format('ttf'),
+         url('./font/lunchtype24-medium-expanded.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body{
     font-family: 'lunchtype24', 'sans-serif';
-    src: url('fonts/lunchtype24-medium-expanded.ttf');
     background-color: #f4f2e6;
     overflow-x: hidden; 
 }
@@ -436,13 +447,9 @@ span {
 /* efek section tablet */
 @media screen and (max-width:768px){
 
-    /* .sun{
-        position: absolute;
-        top: -20px; 
-        height: 2%;
-        width: auto;
-    } */
-    
+    html{
+        overflow-x: hidden;
+    }
     .kecil1{
         right: 9%;
     }
@@ -472,6 +479,9 @@ span {
 
 
 @media screen and (max-width: 576px){
+    html{
+        overflow-x: hidden;
+    }
     .pembuka h2{
         display: none;
     }
