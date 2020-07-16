@@ -4,20 +4,33 @@
     box-sizing: border-box;
 }
 
+html{
+    scrollbar-width: none;
+}
+
 @font-face{
     font-family: 'lunchtype24expanded_medium';
     src: url('/font/lunchtype24-medium-expanded-webfont.eot');
     src: url('/font/lunchtype24-medium-expanded-webfont.eot?#iefix') format('embedded-opentype'),
          url('/font/lunchtype24-medium-expanded-webfont.woff2') format('woff2'),
          url('/font/lunchtype24-medium-expanded-webfont.woff') format('woff'),
-         url('/font/lunchtype24-medium-expanded-webfont.ttf') format('truetype'),
+         url('/font/lunchtype24-medium-expanded-webfont.ttf') format('ttf'),
          url('/font/lunchtype24-medium-expanded-webfont.svg#lunchtype24expanded_medium') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 
-html{
-    scrollbar-width: none;
+@font-face {
+    font-family: 'lunchtype24expanded_regular';
+    src: url('/font/lunchtype24-regular-expanded-webfont.eot');
+    src: url('/font/lunchtype24-regular-expanded-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/font/lunchtype24-regular-expanded-webfont.woff2') format('woff2'),
+         url('/font/lunchtype24-regular-expanded-webfont.woff') format('woff'),
+         url('/font/lunchtype24-regular-expanded-webfont.ttf') format('truetype'),
+         url('/font/lunchtype24-regular-expanded-webfont.svg#lunchtype24expanded_regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
 }
 
 body{
@@ -118,10 +131,10 @@ nav ul{
     width: 20%;
     justify-content: space-between;
     color: #302d2d;
-    
 }
 
 nav ul li a{
+    font-family: 'lunchtype24expanded_regular';
     color: #302d2d;
     text-decoration: none;
     font-size: 0.9em;
@@ -190,6 +203,7 @@ nav ul li a:hover {
 }
 
 footer{
+    font-family: 'lunchtype24expanded_regular';
     position: fixed;
     display: flex;
     bottom: 0;
@@ -491,35 +505,46 @@ span {
     .pembuka-hp{
         display: block;
         position: absolute;
-        margin-right: 1vh;
-        top: 26%;
-        font-size: calc(1.1em + 1vw);
+        margin-right: 5vh;
+        top: 30%;
+        font-size: calc(1em + 1vw);
     }
     .panah{
-        top: 75%;
+        top: 80%;
         height: 15vh;
     }
     section img.sun{
         height: 9vh;
     }
+    .bintangbesar{
+        position: absolute;
+        width: 60%;
+        right: 5%;
+        top: 40%;
+    }
     .navigation-wrapper{
-        top: 105%;
+        top: 125%;
         font-size: calc(0.65em + 1vw);
     }
     .resume{
-        top: 150%;
+        top: 170%;
     }
     .portfolio{
-        top: 155%;
+        top: 175%;
     }
     .pembuka-project{
-        top: 90%;
+        top: 105%;
         font-size: calc(1em + 1vw);
+        margin-right: 5vh;
     }
     .kecil1{
+        width: 10%;
         right: 10%;
     }
-    
+    .kecil2{
+        width: 10%;
+        right: 5%;
+    }
 }
 
 /* .scene,
