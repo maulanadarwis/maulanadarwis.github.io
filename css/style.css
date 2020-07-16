@@ -517,7 +517,7 @@ span {
         margin-right: 5vh;
         top: 30%;
         font-size: calc(1em + 1vw);
-        font-weight: lighter;
+        font-family: 'lunchtype24expanded_regular';
     }
     .panah{
         top: 74%;
@@ -561,13 +561,16 @@ span {
     }
 
     .resume{
+        font-family: 'lunchtype24expanded_regular';
         top: 445%;
     }
     .portfolio{
+        font-family: 'lunchtype24expanded_regular';
         top: 450%;
         padding-bottom: 25%;
     }
     .pembuka-project{
+        font-family: 'lunchtype24expanded_regular';
         top: 105%;
         font-size: calc(1em + 1vw);
         font-weight: lighter;
