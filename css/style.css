@@ -376,9 +376,14 @@ section{
 }
 
 .navigation-wrapper{
+    font-family: 'lunchtype24expanded_medium';
     position: absolute;
     top: 110%;
     left: 5%;
+}
+
+.navigation-wrapper-mobile {
+    display: none;
 }
 
 .navigation-item {
@@ -512,9 +517,10 @@ span {
         margin-right: 5vh;
         top: 30%;
         font-size: calc(1em + 1vw);
+        font-weight: lighter;
     }
     .panah{
-        top: 80%;
+        top: 74%;
         height: 15vh;
     }
     section img.sun{
@@ -527,18 +533,44 @@ span {
         top: 40%;
     }
     .navigation-wrapper{
-        top: 125%;
-        font-size: calc(0.65em + 1vw);
+        display: none;
     }
+    .navigation-wrapper-mobile {
+        display: block;
+        position: absolute;
+        list-style: none;
+        font-size: calc(1.5rem + 1vw);
+        top: 125%;
+    }
+    .text-mobile {
+        position: absolute;
+        margin-top: -40%;
+        margin-bottom: 10%;
+        margin-left: 50%;
+        transform: rotate(90deg);
+    }
+    .navigation-wrapper-mobile a{
+        text-decoration: none;
+        color: rgba(37, 35, 35, 0.295);
+    }
+
+    .gambar-mobile {
+        width: 70%;
+        margin-bottom: 10%;
+        /* margin-left: 38%; */
+    }
+
     .resume{
-        top: 170%;
+        top: 445%;
     }
     .portfolio{
-        top: 175%;
+        top: 450%;
+        padding-bottom: 25%;
     }
     .pembuka-project{
         top: 105%;
         font-size: calc(1em + 1vw);
+        font-weight: lighter;
         margin-right: 5vh;
     }
     .kecil1{
