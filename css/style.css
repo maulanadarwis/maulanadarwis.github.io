@@ -250,11 +250,15 @@ footer img{
     .menu-toggle{
         display: flex;
     }
+    nav{
+        width: 100%;
+        position: fixed;
+    }
     nav ul{
         position: absolute;
         right: 0;
         top: 59px;
-        height: 100vh;
+        height: 90vh;
         flex-direction: column;
         background-color: #f4f2e6;
         align-items: center;
@@ -266,7 +270,7 @@ footer img{
         transition: ease-out 0.7s;
     }
     nav ul li{
-        margin-top: -80px;
+        margin-top: -10vh;
     }
     nav ul.slide{
         transform: translateX(0%);
