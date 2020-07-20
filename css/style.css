@@ -394,8 +394,7 @@ section{
   }
 
 .navigation-item a {
-    font-family: 'lunchtype24';
-    src: url('fonts/lunchtype24-medium-expanded.ttf');
+    font-family: 'lunchtype24expanded_medium';
     font-size: calc(1.5em + 2vw);
     text-decoration: none;
     color: rgba(37, 35, 35, 0.295);
