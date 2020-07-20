@@ -102,7 +102,7 @@ body{
 /* mulai ini bagian navbar */
 nav{
     display: flex;
-    position: sticky;
+    position: fixed;
     width: 100%;
     top: 0;
     background-color: #f4f2e6;
@@ -332,19 +332,19 @@ section{
 }
 
 .buka1{
-    top: 20vh;
+    top: 28vh;
 }
 .buka2{
-    top: 27vh;
+    top: 35vh;
 }
 .buka3{
-    top: 34vh;
+    top: 42vh;
 }
 .buka4{
-    top: 41vh;
+    top: 49vh;
 }
 .buka5{
-    top: 48vh;
+    top: 56vh;
 }
 
 .bintangbesar{
