@@ -217,29 +217,29 @@ $('#panah').css({ transform: 'rotate(' + theta + 'rad)' });
 
 
 <!-- SCROLL HALUS BAIK -->
-<script>
-    function wheel(event) {
-      var delta = 0;
-      if (event.wheelDelta) {(delta = event.wheelDelta / 190);}
-      else if (event.detail) {(delta = -event.detail / 3);}
+// <script>
+//    function wheel(event) {
+//      var delta = 0;
+//      if (event.wheelDelta) {(delta = event.wheelDelta / 190);}
+//      else if (event.detail) {(delta = -event.detail / 3);}
 
-      handle(delta);
-      if (event.preventDefault) {(event.preventDefault());}
-      event.returnValue = false;
-  }
+//      handle(delta);
+//      if (event.preventDefault) {(event.preventDefault());}
+//      event.returnValue = false;
+//  }
 
-  function handle(delta) {
-      var time = 1000;
-      var distance = 40;
+//  function handle(delta) {
+//      var time = 1000;
+//      var distance = 40;
 
-      $('html, body').stop().animate({
-          scrollTop: $(window).scrollTop() - (distance * delta)
-      }, time );
-  }
-
-  if (window.addEventListener) {window.addEventListener('DOMMouseScroll', wheel, false);}
-    window.onmousewheel = document.onmousewheel = wheel;
-</script>
+//      $('html, body').stop().animate({
+//          scrollTop: $(window).scrollTop() - (distance * delta)
+//      }, time );
+//  }
+//
+//  if (window.addEventListener) {window.addEventListener('DOMMouseScroll', wheel, false);}
+//    window.onmousewheel = document.onmousewheel = wheel;
+// </script>
 
 <!-- script animasi text -->
 <script src="./js/animasi-text.js"></script>
